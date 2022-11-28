@@ -1,0 +1,39 @@
+.mobile {
+  display: none;
+}
+.totalPrice_Payment {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.paymentPage {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 375px) {
+  .computer {
+    display: none;
+  }
+  .mobile {
+    display: inline;
+    margin-left: 20px;
+  }
+  .totalPrice_Payment {
+    margin-top: 20px;
+    margin-left: 10px;
+    display: inline;
+  }
+  .total,
+  .payment {
+    background: none;
+    margin-bottom: 10px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .paymentPage {
+    display: inline;
+  }
+}

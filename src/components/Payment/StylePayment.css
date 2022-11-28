@@ -1,0 +1,20 @@
+.formPayment {
+  min-width: 700px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.inputPhoneNumber {
+  width: 700px;
+}
+@media only screen and (max-width: 375px) {
+  .formPayment {
+    min-width: 300px;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+  .formOrder {
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+}
