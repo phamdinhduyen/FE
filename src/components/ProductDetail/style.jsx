@@ -15,6 +15,8 @@ export const productItem = styled.div`
     margin-left: 10px;
 
     & img {
+      margin-top: 5px;
+      margin-bottom: 5px;
       max-width: 250px;
       height: auto;
       display: block;

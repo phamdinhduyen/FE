@@ -325,23 +325,25 @@ const ProductDetail = () => {
         </Col>
         <Col className="computer" md={10} sm={24}>
           <div className="Product_detail_infor">
-            <h1 className="Product_detail_content">
+            <span className="Product_detail_content">
               {productItem?.description}
-            </h1>
-            <h2 className="Product_detail_price">
+            </span>{" "}
+            <br />
+            <span className="Product_detail_price">
               Giá tiền: <span>{formatMoney(productItem?.price)} </span>
-            </h2>
+            </span>
             <div style={{ display: "flex" }}>
               {" "}
-              <h2
+              <span
                 style={{
-                  marginRight: 20,
-                  marginLeft: 20,
+                  fontSize: 15,
+                  fontWeight: 700,
                   color: "black",
+                  marginTop: 20,
                 }}
               >
                 Màu sắc :{" "}
-              </h2>
+              </span>
               {color?.map((item) => {
                 return (
                   <Button
@@ -349,6 +351,7 @@ const ProductDetail = () => {
                     key={item}
                     style={{
                       marginLeft: 10,
+                      marginTop: 20,
                       background: "#cccc",
                       border: "1px solid black",
                     }}
@@ -359,8 +362,7 @@ const ProductDetail = () => {
                 );
               })}
             </div>
-
-            <div style={{ marginLeft: 20 }}>
+            <div>
               <Form onFinish={onFinish}>
                 <Form.Item
                   name="quantity"
@@ -517,7 +519,7 @@ const ProductDetail = () => {
 
       <Row>
         <Col md={24} sm={24}>
-          <div style={{ marginLeft: 20 }}>
+          <div style={{ marginLeft: 20, marginTop: 40 }}>
             <h2 className="commentProduct"> Nhận xét sản phẩm </h2>
             {checkOrder === true ? (
               <>

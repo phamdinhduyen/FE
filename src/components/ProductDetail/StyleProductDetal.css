@@ -63,7 +63,6 @@
   margin-left: 50px;
 }
 .Product_detail_name,
-.Product_detail_price,
 .Product_detail_size {
   margin-top: 10px;
   font-size: 20px;
@@ -71,15 +70,15 @@
   margin-left: 20px;
 }
 .Product_detail_price {
-  margin-left: 20px;
+  font-size: 15px;
+  font-weight: 700;
 }
 .Product_detail_size_option {
   margin-left: 20px;
 }
 .Product_detail_content {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  margin-left: 20px;
 }
 .Product_detail_number {
   display: flex;
