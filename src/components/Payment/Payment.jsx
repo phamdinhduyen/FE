@@ -15,6 +15,7 @@ import { orders } from "../../redux/slices/orderSlice";
 import {
   getBonus,
   setNullMessageCouponError,
+  getAllBonus,
 } from "../../redux/slices/bonusSlice";
 import React from "react";
 import { useEffect, useState } from "react";
@@ -32,6 +33,8 @@ const Payment = () => {
   const dispatch = useDispatch();
   const [cart, setCart] = useState([]);
   const coupon = useSelector((state) => state.bonus.coupon);
+  const allBonus = useSelector((state) => state.bonus.entities);
+
   const [totalPriceProducts, setTotalPriceProducts] = useState(0);
   const [totalOrder, setTotalOrder] = useState(0);
   const [couponValue, setCouponValue] = useState(0);
@@ -48,6 +51,7 @@ const Payment = () => {
   }
 
   useEffect(() => {
+    dispatch(getAllBonus());
     let cart = localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))
       : [];
@@ -365,29 +369,58 @@ const Payment = () => {
             pagination={false}
           ></Table>
           <br />
-          <div style={{ display: "flex" }}>
-            {" "}
-            <h4> Tổng tiền sản phẩm: </h4>
-            <span style={{ marginLeft: 20 }}>
-              {formatMoney(totalPriceProducts)}
-            </span>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              {" "}
+              <h4> Tổng tiền sản phẩm: </h4>
+              <span style={{ marginLeft: 20 }}>
+                {formatMoney(totalPriceProducts)}
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              {" "}
+              <h4> Phí vận chuyển: </h4>
+              <span style={{ marginLeft: 20 }}>
+                {formatMoney(shippingCharges)}
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              {" "}
+              <h4> Được giẩm giá: </h4>
+              <span style={{ marginLeft: 20 }}>{formatMoney(couponValue)}</span>
+            </div>
+            <div style={{ display: "flex" }}>
+              {" "}
+              <h4> Tổng tiền: </h4>
+              <span style={{ marginLeft: 20 }}> {formatMoney(totalOrder)}</span>
+            </div>
           </div>
-          <div style={{ display: "flex" }}>
-            {" "}
-            <h4> Phí vận chuyển: </h4>
-            <span style={{ marginLeft: 20 }}>
-              {formatMoney(shippingCharges)}
-            </span>
-          </div>
-          <div style={{ display: "flex" }}>
-            {" "}
-            <h4> Được giẩm giá: </h4>
-            <span style={{ marginLeft: 20 }}>{formatMoney(couponValue)}</span>
-          </div>
-          <div style={{ display: "flex" }}>
-            {" "}
-            <h4> Tổng tiền: </h4>
-            <span style={{ marginLeft: 20 }}> {formatMoney(totalOrder)}</span>
+          <div>
+            {allBonus?.data?.map((item) => {
+              return (
+                <div style={{ display: "flex" }}>
+                  <h4> Mã giảm giá: </h4>
+                  <span style={{ marginLeft: 20 }}>{item.code}</span>{" "}
+                  <span style={{ marginLeft: 5 }}>
+                    {" "}
+                    được giảm {item.value}
+                    {item.rate}
+                    <span style={{ marginLeft: 5 }}>
+                      trên tổng tiền đơn hàng
+                    </span>
+                  </span>{" "}
+                  <br />
+                  <span style={{ marginLeft: 5 }}>
+                    {" "}
+                    chỉ được áp dụng cho đơn hàng lớn hơn
+                    <span style={{ marginLeft: 2 }}>
+                      {formatMoney(item.total_amount_apply)}
+                    </span>
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -9,6 +9,14 @@ export const getBonus = createAsyncThunk("bonus/get-list", async (value) => {
   }
 });
 
+export const getAllBonus = createAsyncThunk("bonus", async () => {
+  try {
+    return await bonusService.getAllBonus();
+  } catch (error) {
+    throw new Error(JSON.stringify(error.response.data));
+  }
+});
+
 const initialState = {
   entities: [],
   loading: false,
@@ -42,6 +50,21 @@ export const bonusSlice = createSlice({
       console.log(action.payload);
     });
     builder.addCase(getBonus.rejected, (state, action) => {
+      console.log(action.error);
+      console.log(`Rejected getBonus...`);
+      state.loading = false;
+    });
+
+    builder.addCase(getAllBonus.pending, (state, action) => {
+      console.log("Pending getBonus ...");
+      state.loading = true;
+    });
+    builder.addCase(getAllBonus.fulfilled, (state, action) => {
+      console.log(`Fulfilled getBonus`);
+      state.loading = false;
+      state.entities = action.payload;
+    });
+    builder.addCase(getAllBonus.rejected, (state, action) => {
       console.log(action.error);
       console.log(`Rejected getBonus...`);
       state.loading = false;
