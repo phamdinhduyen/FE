@@ -240,7 +240,7 @@ const Header = () => {
             <ShoppingCartOutlined onClick={() => cart()} />
           </div>
           <span className="quantity"> {userAuth ? quantity : 0}</span>
-          <div className="mobile">
+          <div className="navbar_mobile">
             <NavbarMobile />
           </div>
         </div>

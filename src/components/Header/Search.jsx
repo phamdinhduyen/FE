@@ -33,10 +33,8 @@ const SearchProducts = () => {
           onSearch={onSearch}
         />
       </div>
-      <div className="mobile">
-        <div
-          style={{ width: 200, marginTop: -25, marginLeft: 3, marginRight: 10 }}
-        >
+      <div className="search_mobile">
+        <div style={{ width: 200, marginLeft: 13, marginRight: 30 }}>
           <Search
             placeholder="Tìm kiếm sản phẩm"
             size="large"
