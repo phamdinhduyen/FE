@@ -12,7 +12,7 @@ import categoriesSlice from "./redux/slices/categoriesSlice";
 import optPriceSlice from "./redux/slices/optPriceSlice";
 import favoriteSlice from "./redux/slices/favoritesSlice";
 import commentSlice from "./redux/slices/commentSlice";
-
+import locationSlice from "./redux/slices/location.slice";
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
@@ -30,6 +30,7 @@ const store = configureStore({
     otpPrice: optPriceSlice,
     favorite: favoriteSlice,
     comment: commentSlice,
+    location: locationSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

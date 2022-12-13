@@ -136,13 +136,17 @@ const Payment = () => {
     if (coupon) {
       if (bonus?.start_date && bonus?.end_date) {
         if (totalPriceProducts >= bonus.total_amount_apply) {
+          console.log(currentDate);
+          console.log(bonus.end_date);
+          console.log(bonus.start_date);
           if (currentDate >= bonus.start_date && currentDate < bonus.end_date) {
+            console.log("1111");
             const is_percent = bonus.is_percent;
             if (is_percent) {
               const remainAmount =
                 totalOrder - (totalOrder * bonus.value) / 100;
               const bonusPrice = (totalOrder * bonus.value) / 100;
-
+              console.log("1111");
               setTotalOrder(remainAmount);
               setCouponValue(bonusPrice);
               setBonusValue(true);

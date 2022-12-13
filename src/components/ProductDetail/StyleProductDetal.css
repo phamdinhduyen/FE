@@ -134,7 +134,7 @@
 .informationvalue {
   margin-top: 10px;
 }
-@media only screen and (max-width: 375px) {
+@media (min-width: 375px) and (max-width: 414px) {
   .computer {
     display: none;
   }
@@ -144,16 +144,17 @@
   .Product_detail_name {
     font-size: 15px;
     width: 100%;
-    margin-right: 0px;
-    padding: 0;
+    margin-left: 10px;
   }
   .Product_detail_price {
     font-size: 15px;
     width: 100%;
+    margin-left: 10px;
   }
   .Product_detail_content {
-    margin-top: -60px;
+    margin-top: 0px;
     font-size: 15px;
+    margin-left: 10px;
   }
   .informationName {
     margin-top: 5px;

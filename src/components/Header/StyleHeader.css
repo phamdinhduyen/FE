@@ -204,7 +204,8 @@
   .header_list {
     max-width: 100%;
     height: 70px;
-    background: #1453c3;
+    background: #1453c3 !important;
+    z-index: 100;
   }
   .header_infor {
     width: 100%;
@@ -273,6 +274,154 @@
     background: none;
     color: white;
   }
+  .logout {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header_list {
+    max-width: 100%;
+    height: 70px;
+    background: #1453c3 !important;
+    z-index: 100;
+  }
+  .header_infor {
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+  }
+  .quantity,
+  .header_infor_item,
+  .header_infor_item_transport,
+  .header_infor_item_location,
+  .header_infor_item_recruit,
+  .header_infor_item_location {
+    display: none;
+  }
+  .header_infor_item_phone_icon,
+  .header_infor_item_transport_icon,
+  .header_infor_item_transport_icon,
+  .header_infor_item_location_icon {
+    display: none;
+  }
+
+  .header_infor_item_transport_name,
+  .header_infor_item_phone_name,
+  .header_infor_item_recruit_name,
+  .header_infor_item_location_name {
+    font-size: 17px;
+    color: white;
+    display: none;
+  }
+  .header_infor_item_register {
+    display: none;
+  }
+  .header_infor_item_signup {
+    margin-top: 2px;
+    color: white;
+    background-color: #1453c3 !important;
+    border: 1px solid #2c4982 !important;
+    display: none;
+  }
+  .header_logo_img {
+    display: none;
+  }
+  .header_bottom,
+  .header_sort {
+    width: 0px;
+  }
+
+  .header_sort_oppo,
+  .header_sort_samsung,
+  .header_sort_iphone {
+    display: none;
+  }
+  .header_sort {
+    display: none;
+  }
+
+  .header_cart {
+    display: none;
+  }
+
+  .logout {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .header_list {
+    max-width: 100%;
+    height: 70px;
+    background: #1453c3 !important;
+    z-index: 100;
+  }
+  .header_infor {
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+  }
+  .quantity,
+  .header_infor_item,
+  .header_infor_item_transport,
+  .header_infor_item_location,
+  .header_infor_item_recruit,
+  .header_infor_item_location {
+    display: none;
+  }
+  .header_infor_item_phone_icon,
+  .header_infor_item_transport_icon,
+  .header_infor_item_transport_icon,
+  .header_infor_item_location_icon {
+    display: none;
+  }
+
+  .header_infor_item_transport_name,
+  .header_infor_item_phone_name,
+  .header_infor_item_recruit_name,
+  .header_infor_item_location_name {
+    font-size: 17px;
+    color: white;
+    display: none;
+  }
+  .header_infor_item_register {
+    display: none;
+  }
+  .header_infor_item_signup {
+    margin-top: 2px;
+    color: white;
+    background-color: #1453c3 !important;
+    border: 1px solid #2c4982 !important;
+    display: none;
+  }
+  .header_logo_img {
+    display: none;
+  }
+  .header_bottom,
+  .header_sort {
+    width: 0px;
+  }
+
+  .header_sort_oppo,
+  .header_sort_samsung,
+  .header_sort_iphone {
+    display: none;
+  }
+  .header_sort {
+    display: none;
+  }
+
+  .header_cart {
+    display: none;
+  }
+
   .logout {
     display: none;
   }

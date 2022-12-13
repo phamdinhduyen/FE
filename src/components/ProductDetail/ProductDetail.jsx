@@ -270,18 +270,32 @@ const ProductDetail = () => {
               {productItem?.description}
             </h1>
 
+            {productItem?.images.map((image) => (
+              <div key={image}>
+                <img
+                  style={{ width: "300px", aligItem: "center" }}
+                  src={image}
+                  alt=""
+                />
+              </div>
+            ))}
             <div style={{ marginLeft: 20 }}>
               <Form onFinish={onFinish}>
-                <Space>
-                  <Form.Item
-                    name="quantity"
-                    label="Số lượng"
-                    initialValue={1}
-                    style={{ fontSize: "17px" }}
+                <Form.Item>
+                  <Button
+                    size="large"
+                    icon={
+                      isLike ? (
+                        <LikeFilled style={{ color: "violet" }} />
+                      ) : (
+                        <LikeOutlined />
+                      )
+                    }
+                    onClick={liked}
                   >
-                    <InputNumber min={0} style={{ width: " 50px" }} />
-                  </Form.Item>
-                </Space>
+                    {likeQuantity} liked
+                  </Button>
+                </Form.Item>
 
                 <Space>
                   <Form.Item style={{ position: "relative" }}>
@@ -293,34 +307,16 @@ const ProductDetail = () => {
                       Thêm vào giỏ hàng
                     </Button>
                   </Form.Item>
-                  <Form.Item>
-                    <Button
-                      size="large"
-                      icon={
-                        isLike ? (
-                          <LikeFilled style={{ color: "violet" }} />
-                        ) : (
-                          <LikeOutlined />
-                        )
-                      }
-                      onClick={liked}
-                    >
-                      {likeQuantity} liked
-                    </Button>
+                  <Form.Item
+                    name="quantity"
+                    initialValue={1}
+                    style={{ fontSize: "17px" }}
+                  >
+                    <InputNumber min={0} style={{ width: " 50px" }} />
                   </Form.Item>
                 </Space>
               </Form>
             </div>
-
-            {productItem?.images.map((image) => (
-              <div key={image}>
-                <img
-                  style={{ width: "300px", aligItem: "center" }}
-                  src={image}
-                  alt=""
-                />
-              </div>
-            ))}
           </div>
         </Col>
         <Col className="computer" md={10} sm={24}>
@@ -408,7 +404,7 @@ const ProductDetail = () => {
           <h3
             style={{
               marginTop: 20,
-              marginLeft: 50,
+              marginLeft: 10,
               fontWeight: 600,
               fontSize: 20,
             }}

@@ -1,6 +1,4 @@
 import React from "react";
-import { updateStateModal } from "../../redux/action/Modal.action";
-import { useDispatch, useSelector } from "react-redux";
 
 import * as AiIcons from "react-icons/ai";
 

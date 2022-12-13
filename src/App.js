@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import TrackMyOrder from "./components/TrackMyOrder/TrackMyOrder";
 import { useDispatch } from "react-redux";
 import OrderDetail from "./components/TrackMyOrder/OrderDetail";
-
+import Location from "./components/Payment/Location";
 import { getProducts } from "./redux/slices/productSlice";
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
       <Route path={ROUTES.INFOR_ORDER} exact element={<InforOrder />} />
       <Route path={ROUTES.TRACK_MY_ORDER} exact element={<TrackMyOrder />} />
       <Route path={ROUTES.ORDER_DETAIL} exact element={<OrderDetail />} />
+      <Route path={ROUTES.LOCATION} exact element={<Location />} />
     </Routes>
   );
 }

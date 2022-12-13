@@ -34,6 +34,9 @@ function Navbar() {
     localStorage.removeItem("user");
     window.location.reload();
   };
+  const cart = () => {
+    navigate("/cart");
+  };
   return (
     <div>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -60,10 +63,10 @@ function Navbar() {
             {!user ? (
               <>
                 <li className="nav-text">
-                  <h1 style={{ marginLeft: 20 }} onClick={login}>
+                  <Link style={{ marginLeft: 20 }} onClick={login}>
                     {" "}
                     Đăng nhập
-                  </h1>
+                  </Link>
                 </li>
                 <li className="nav-text">
                   <Link style={{ marginLeft: 20 }} onClick={register}>
@@ -80,6 +83,11 @@ function Navbar() {
                     onClick={trackMyOrder}
                   >
                     Tra cứu đơn hàng
+                  </h4>
+                </li>
+                <li className="nav-text">
+                  <h4 style={{ marginLeft: 20, color: "white" }} onClick={cart}>
+                    Giỏ hàng
                   </h4>
                 </li>
                 <li className="nav-text">

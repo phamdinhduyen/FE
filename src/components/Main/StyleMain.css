@@ -16,7 +16,6 @@
 }
 /* Products */
 .product_item {
-  position: relative;
   height: 400px;
   background-color: white;
   overflow: hidden;
@@ -81,6 +80,7 @@
   margin-left: 35px;
   margin-right: 26px;
   margin-bottom: 20px;
+  position: relative;
 }
 @media only screen and (max-width: 1700px) {
   .carousel_img_home {
@@ -165,7 +165,7 @@
 }
 /*  */
 
-@media only screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   .headerSortPice {
     display: none;
   }

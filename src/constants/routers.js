@@ -6,6 +6,7 @@ export const ROUTES = {
   INFOR_ORDER: "/info-order",
   TRACK_MY_ORDER: "/track-my-order",
   ORDER_DETAIL: "/order-detail/:id",
+  LOCATION: "/location",
   USER: {
     PRODUCT_LIST: "/products",
 

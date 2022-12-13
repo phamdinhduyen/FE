@@ -12,14 +12,11 @@ const Home = () => {
   return (
     <div>
       <Row>
-        <Col md={24}>
-          {" "}
-          <HeaderPage />
-        </Col>
+        <HeaderPage />
       </Row>
 
       <Row>
-        <Col md={3} sm={24} style={{ marginBottom: 8 }}>
+        <Col md={3} sm={24} xs={24} style={{ marginBottom: 8 }}>
           <Navbar />
         </Col>
         <Col md={21} sm={24}>
