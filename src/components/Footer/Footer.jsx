@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <Row>
-        <Col className="footerItem" md={6} sm={24}>
+        <Col className="footerItem" sm={12} xl={6} md={8}>
           <div className="css">
             <span className="footer_list_customer_name">
               CHĂM SÓC KHÁCH HÀNG
@@ -67,7 +67,7 @@ const Footer = () => {
             </ul>
           </div>
         </Col>
-        <Col className="footerItem" md={6} sm={24}>
+        <Col className="footerItem" sm={12} xl={6} md={8}>
           <div className="css">
             <span className="footer_list_customer_name">VỀ DN</span>
             <ul className="footer_list_customer">
@@ -120,7 +120,7 @@ const Footer = () => {
             </ul>
           </div>
         </Col>
-        <Col className="footerItem" md={6} sm={24}>
+        <Col className="footerItem" sm={12} xl={6} md={8}>
           <div className="css">
             <span className="footer_list_customer_name">THANH TOÁN</span>
 
@@ -143,7 +143,7 @@ const Footer = () => {
             </div>
           </div>
         </Col>
-        <Col className="footerItem" md={6} sm={24}>
+        <Col className="footerItem" sm={12} xl={6} md={12}>
           <div className="css">
             {" "}
             <span className="footer_list_customer_name">

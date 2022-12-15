@@ -6,6 +6,9 @@
 
   margin-left: 20px;
 }
+.inforProductDetail {
+  display: none;
+}
 .Product_detail_lits_img {
   margin-top: 10px;
   margin-left: 40px;
@@ -96,9 +99,6 @@
 .footer_productDetail {
   margin-top: 30px;
 }
-.mobile {
-  display: none;
-}
 
 .informationName {
   margin-top: 5px;
@@ -134,12 +134,176 @@
 .informationvalue {
   margin-top: 10px;
 }
-@media (min-width: 375px) and (max-width: 414px) {
+@media screen and (max-width: 375px) {
   .computer {
     display: none;
   }
-  .mobile {
+  .inforProductDetail {
     display: inline;
+  }
+  .Product_detail_name {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .Product_detail_price {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .Product_detail_content {
+    margin-top: 0px;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .informationName {
+    margin-top: 5px;
+    margin-left: 20px;
+    align-items: center;
+    font-size: 17px;
+    width: 150px;
+  }
+  .informationvalue {
+    margin-top: 10px;
+  }
+  .commentProduct {
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: -10px;
+  }
+  .buttonDelete {
+    background: none;
+    padding: 3px;
+    color: red;
+    margin-left: 3px;
+    border: none;
+  }
+  .buttonEdit {
+    background: none;
+    padding: 3px;
+    color: #1890ff;
+    margin-left: 3px;
+    border: none;
+  }
+}
+@media screen and (max-width: 414px) {
+  .computer {
+    display: none;
+  }
+  .inforProductDetail {
+    display: inline;
+  }
+  .Product_detail_name {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .Product_detail_price {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .Product_detail_content {
+    margin-top: 0px;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .informationName {
+    margin-top: 5px;
+    margin-left: 20px;
+    align-items: center;
+    font-size: 17px;
+    width: 150px;
+  }
+  .informationvalue {
+    margin-top: 10px;
+  }
+  .commentProduct {
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: -10px;
+  }
+  .buttonDelete {
+    background: none;
+    padding: 3px;
+    color: red;
+    margin-left: 3px;
+    border: none;
+  }
+  .buttonEdit {
+    background: none;
+    padding: 3px;
+    color: #1890ff;
+    margin-left: 3px;
+    border: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .computer {
+    display: none;
+  }
+  .inforProductDetail {
+    display: inline;
+  }
+  .photo {
+    width: 500px;
+    height: auto;
+  }
+  .Product_detail_name {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .Product_detail_price {
+    font-size: 15px;
+    width: 100%;
+    margin-left: 10px;
+  }
+  .Product_detail_content {
+    margin-top: 0px;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .informationName {
+    margin-top: 5px;
+    margin-left: 20px;
+    align-items: center;
+    font-size: 17px;
+    width: 150px;
+  }
+  .informationvalue {
+    margin-top: 10px;
+  }
+  .commentProduct {
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: -10px;
+  }
+  .buttonDelete {
+    background: none;
+    padding: 3px;
+    color: red;
+    margin-left: 3px;
+    border: none;
+  }
+  .buttonEdit {
+    background: none;
+    padding: 3px;
+    color: #1890ff;
+    margin-left: 3px;
+    border: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .computer {
+    display: none !important;
+  }
+  .inforProductDetail {
+    display: inline;
+  }
+  .photo {
+    width: 500px;
+    height: auto;
   }
   .Product_detail_name {
     font-size: 15px;
