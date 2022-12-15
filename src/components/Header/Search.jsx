@@ -34,7 +34,7 @@ const SearchProducts = () => {
         />
       </div>
       <div className="search_mobile">
-        <div style={{ width: 200, marginLeft: 13, marginRight: 30 }}>
+        <div className="search_input">
           <Search
             placeholder="Tìm kiếm sản phẩm"
             size="large"

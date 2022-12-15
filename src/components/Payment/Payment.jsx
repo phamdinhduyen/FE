@@ -6,6 +6,7 @@ import {
   notification,
   Space,
   Table,
+  Select,
   Radio,
 } from "antd";
 import Header from "../Header/Header";
@@ -17,8 +18,13 @@ import {
   setNullMessageCouponError,
   getAllBonus,
 } from "../../redux/slices/bonusSlice";
+import {
+  getCityLocation,
+  getDistrictsLocation,
+  getWardsLocation,
+} from "../../redux/slices/location.slice";
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import useAuth from "../../hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -45,6 +51,24 @@ const Payment = () => {
     (state) => state.bonus.messageErrorBonus
   );
 
+  const [infoForm] = Form.useForm();
+
+  useEffect(() => {
+    dispatch(getCityLocation());
+  }, []);
+
+  const cityList = useSelector((state) => state.location.cities);
+
+  const DistrictList = useSelector((state) => state.location.districts);
+  const WardsList = useSelector((state) => state.location.wards);
+
+  const initialValues = {
+    phone: "",
+    address: "",
+    cityCode: undefined,
+    DistrictCode: undefined,
+    WardCode: undefined,
+  };
   if (!userAuth) {
     dispatch(updateStateModal(true));
     navigate(ROUTES.HOME);
@@ -188,6 +212,10 @@ const Payment = () => {
         fullName: values.fullname,
         phone: values.phoneNumber,
         address: values.address,
+        WardCode: values.wardCode,
+        DistrictCode: values.districtCode,
+        cityCode: values.cityCode,
+
         note: values.note,
         shipping: values.shipping,
         created: currentDate,
@@ -261,6 +289,35 @@ const Payment = () => {
     },
   ];
 
+  const renderCityOptions = useMemo(() => {
+    return cityList?.data?.map((item) => {
+      return (
+        <Select.Option key={item.id} value={item.code}>
+          {item.name}
+        </Select.Option>
+      );
+    });
+  }, [cityList.data]);
+
+  const renderWardsOptions = useMemo(() => {
+    return WardsList?.data?.map((item) => {
+      return (
+        <Select.Option key={item.id} value={item.code}>
+          {item.name}
+        </Select.Option>
+      );
+    });
+  });
+
+  const renderDistrictOptions = useMemo(() => {
+    return DistrictList?.data?.map((item) => {
+      return (
+        <Select.Option key={item.id} value={item.code}>
+          {item.name}
+        </Select.Option>
+      );
+    });
+  });
   return (
     <div>
       <Header />
@@ -278,7 +335,7 @@ const Payment = () => {
             colon={false}
           >
             <Form.Item
-              label="Họ tên"
+              label={<b>Họ tên</b>}
               name="fullname"
               rules={[
                 {
@@ -290,7 +347,7 @@ const Payment = () => {
               <Input />
             </Form.Item>
             <Form.Item
-              label="Số điện thoại"
+              label={<b>Số điện thoại</b>}
               name="phoneNumber"
               rules={[
                 {
@@ -303,7 +360,77 @@ const Payment = () => {
             </Form.Item>
 
             <Form.Item
-              label="Địa chỉ"
+              style={{ width: "auto" }}
+              label={<b>Tỉnh/Thành phố</b>}
+              name="cityCode"
+              rules={[
+                {
+                  required: true,
+                  message: "Đây là trường bắt buộc!",
+                },
+              ]}
+            >
+              <Select
+                onChange={(value) => {
+                  dispatch(getDistrictsLocation(value));
+                  infoForm.setFieldsValue({
+                    districtCode: undefined,
+                    wardCode: undefined,
+                  });
+                }}
+                style={{
+                  boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                }}
+              >
+                {renderCityOptions}
+              </Select>
+            </Form.Item>
+            <Form.Item
+              style={{ width: "auto" }}
+              label={<b>Quận/Huyện</b>}
+              name="districtCode"
+              rules={[
+                {
+                  required: true,
+                  message: "Đây là trường bắt buộc!",
+                },
+              ]}
+            >
+              <Select
+                style={{
+                  boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                }}
+                onChange={(value) => {
+                  dispatch(getWardsLocation(value));
+                  infoForm.setFieldsValue({
+                    wardCode: undefined,
+                  });
+                }}
+              >
+                {renderDistrictOptions}
+              </Select>
+            </Form.Item>
+            <Form.Item
+              style={{ width: "auto" }}
+              label={<b>Phường/Xã</b>}
+              name="wardCode"
+              rules={[
+                {
+                  required: true,
+                  message: "Đây là trường bắt buộc!",
+                },
+              ]}
+            >
+              <Select
+                style={{
+                  boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                }}
+              >
+                {renderWardsOptions}
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={<b>Số nhà, Đường</b>}
               name="address"
               rules={[
                 {
@@ -314,11 +441,12 @@ const Payment = () => {
             >
               <Input />
             </Form.Item>
-            <Form.Item name="note" label="Nội dung ">
+
+            <Form.Item name="note" label={<b>Nội dung</b>}>
               <Input.TextArea />
             </Form.Item>
 
-            <Form.Item name="bonus" label="Mã giảm giá ">
+            <Form.Item name="bonus" label={<b>Mã giảm giá</b>}>
               <Search
                 placeholder="Nhập mã giảm giá"
                 allowClear
@@ -330,7 +458,7 @@ const Payment = () => {
             </Form.Item>
 
             <Form.Item
-              label="Hình thức giao hàng"
+              label={<b>Hình thức giao hàng</b>}
               name="shipping"
               rules={[
                 { required: true, message: "Vui lòng chọn cách giao hàng!" },
@@ -344,7 +472,7 @@ const Payment = () => {
               </Radio.Group>
             </Form.Item>
             <Form.Item
-              label="Hình thức thanh toán"
+              label={<b>Hình thức thanh toán</b>}
               name="payment"
               rules={[
                 { required: true, message: "Vui lòng chọn cách thanh toán!" },

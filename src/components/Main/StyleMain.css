@@ -1,4 +1,5 @@
 /*  */
+
 .carousel_img_home {
   height: 315px;
   width: 100%;
@@ -22,6 +23,7 @@
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid rgb(82, 81, 81);
+  margin-left: 20px;
 }
 .product_img {
   margin-top: 30px;
@@ -187,6 +189,7 @@
     margin-top: 10px;
     border-radius: 5px;
     border: 1px solid rgb(82, 81, 81);
+    margin-left: 90px !important;
   }
   .product_name {
     font-size: 1rem;
@@ -210,7 +213,201 @@
 
     margin-left: 40px;
   }
+}
+@media screen and (max-width: 320px) {
+  .headerSortPice {
+    display: none;
+  }
+  .suggestions {
+    border: 1px solid black;
+    font-size: 15px;
+    text-align: center;
+  }
+  .carousel {
+    display: none;
+  }
+  .products {
+    margin-left: 2px;
+  }
+  .product_item {
+    height: 320px;
+    background-color: white;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(82, 81, 81);
+  }
+  .product_name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    margin-left: 2px;
+    line-height: 1.8rem;
+    margin-top: -40px;
+    width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .product_price {
+    font-size: 1rem;
+    font-weight: 400;
+    color: red;
+    height: 3.6rem;
+    font-size: 18px;
+
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .headerSortPice {
+    display: none;
+  }
+  .suggestions {
+    border: 1px solid black;
+    font-size: 15px;
+    text-align: center;
+  }
+  .carousel {
+    display: none;
+  }
+  .products {
+    margin-left: 2px;
+  }
+  .product_item {
+    height: 320px;
+    background-color: white;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(82, 81, 81);
+    margin-left: 80px !important;
+  }
+  .product_name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    margin-left: 2px;
+    line-height: 1.8rem;
+    margin-top: -40px;
+    width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .product_price {
+    font-size: 1rem;
+    font-weight: 400;
+    color: red;
+    height: 3.6rem;
+    font-size: 18px;
+
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .catergory {
+    margin-left: 120px !important;
+  }
+  .headerSortPice {
+    display: none;
+  }
+  .suggestions {
+    border: 1px solid black;
+    font-size: 15px;
+    text-align: center;
+  }
+  .carousel {
+    display: none;
+  }
+  .row_products {
+    margin-left: 30px;
+  }
+  .products {
+    margin-left: 10px;
+  }
+  .product_item {
+    height: auto;
+    background-color: white;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(82, 81, 81);
+    margin-left: 50px;
+  }
+  .product_name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    margin: auto;
+    line-height: 1.8rem;
+    margin-top: -40px;
+    width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .product_price {
+    font-size: 1rem;
+    font-weight: 400;
+    color: red;
+    height: 3.6rem;
+    font-size: 18px;
+
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .catergory,
   .headerSort {
-    min-width: 354px;
+    display: none;
+  }
+  .headerSortPice {
+    display: none;
+  }
+  .suggestions {
+    border: 1px solid black;
+    font-size: 15px;
+    text-align: center;
+  }
+  .carousel {
+    display: none;
+  }
+  .products {
+    margin-left: 2px;
+  }
+  .product_item {
+    height: 300px;
+    width: 200px;
+    background-color: white;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(82, 81, 81);
+  }
+  .product_name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    margin: auto;
+    line-height: 1.8rem;
+    margin-top: -40px;
+    width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .product_price {
+    font-size: 1rem;
+    font-weight: 400;
+    color: red;
+    height: 3.6rem;
+    font-size: 18px;
+
+    margin: auto;
   }
 }

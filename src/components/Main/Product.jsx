@@ -28,17 +28,11 @@ const Product = () => {
 
   return (
     <>
-      <Row
-        gutter={24}
-        style={{
-          marginLeft: "60px",
-          marginRight: "60px",
-        }}
-      >
+      <Row gutter={24} className="row_products">
         {renderProducts?.data?.map((product, idx) => (
           <React.Fragment key={idx}>
             {
-              <Col className="products" xs={24} md={5} lg={5} sm={24}>
+              <Col className="products" md={7} lg={5} sm={10}>
                 <div
                   className="product_item"
                   onClick={() => handleProductDetail(product)}

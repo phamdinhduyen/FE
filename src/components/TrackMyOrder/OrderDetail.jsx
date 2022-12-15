@@ -12,7 +12,12 @@ import { ROUTES } from "../../constants/routers";
 import { orderDetail } from "../../redux/slices/orderSlice";
 import formatMoney from "../../utils/common";
 import Footer from "../Footer/Footer";
-import { TrackMyOrder } from "../../redux/slices/orderSlice";
+
+import {
+  searchCityLocation,
+  searchDistrictsLocation,
+  searchWardLocation,
+} from "../../redux/slices/location.slice";
 
 const OrderDetail = () => {
   const { id } = useParams();
@@ -27,9 +32,29 @@ const OrderDetail = () => {
     dispatch(orderDetail(id));
   }, []);
 
+  let cityList = useSelector((state) => state.location.cities);
+  cityList = cityList?.data ? cityList?.data[0] : null;
+  cityList = cityList?.name;
+
+  let DistrictList = useSelector((state) => state.location.districts);
+  DistrictList = DistrictList?.data ? DistrictList?.data[0] : null;
+  DistrictList = DistrictList?.name;
+  let WardsList = useSelector((state) => state.location.wards);
+  WardsList = WardsList?.data ? WardsList?.data[0] : null;
+  WardsList = WardsList?.name;
   let order = useSelector((state) => state.order.entities);
 
   order = order?.data ? order?.data[0] : null;
+  const cityCode = order?.cityCode;
+  const DistrictCode = order?.DistrictCode;
+  console.log(order);
+  const WardCode = order?.WardCode;
+
+  useEffect(() => {
+    dispatch(searchCityLocation(cityCode));
+    dispatch(searchDistrictsLocation(DistrictCode));
+    dispatch(searchWardLocation(WardCode));
+  }, [cityCode, DistrictCode, WardCode]);
   const products = order?.product?.map((item) => {
     const slug = item.slug + "-" + item.id;
     const b = slug.split(".");
@@ -188,10 +213,11 @@ const OrderDetail = () => {
                     marginTop: 7,
                   }}
                 >
-                  Địa chỉ giao hàng:{" "}
+                  Địa chỉ:{" "}
                 </h4>{" "}
                 <p style={{ fontweight: 400, marginTop: 7, marginLeft: 10 }}>
-                  {order?.address}
+                  {order?.address} {}
+                  {WardsList} {DistrictList} {cityList}
                 </p>
               </div>
               <div style={{ display: "flex" }}>

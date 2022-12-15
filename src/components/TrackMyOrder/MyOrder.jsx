@@ -8,6 +8,11 @@ import { Table } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { updateStateModal } from "../../redux/action/Modal.action";
 import { ROUTES } from "../../constants/routers";
+import {
+  getCityLocation,
+  getDistrictsLocation,
+  getWardsLocation,
+} from "../../redux/slices/location.slice";
 
 const MyOrder = () => {
   const dispatch = useDispatch();

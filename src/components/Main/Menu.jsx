@@ -54,6 +54,7 @@ const Menu = () => {
           Thương hiệu
         </h2>
         <Checkbox.Group
+          className="catergory"
           options={optionsCategory}
           onChange={onChange}
           style={{ marginLeft: 20 }}
