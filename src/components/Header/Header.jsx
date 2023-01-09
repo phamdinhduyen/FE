@@ -206,7 +206,7 @@ const Header = () => {
             <div
               className="logout"
               style={{
-                marginLeft: 560,
+                marginLeft: 200,
                 fontSize: "18px",
                 color: "white",
               }}
