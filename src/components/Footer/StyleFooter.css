@@ -35,41 +35,6 @@
   margin-left: -80px;
 }
 
-@media only screen and (max-width: 1700px) {
-  .footer {
-    background: #1453c3;
-  }
-  .css {
-    margin-top: 20px;
-    margin-left: 40px;
-  }
-  .footer_list_customer_name {
-    color: white;
-  }
-  .footer_list_customer {
-    color: white;
-    list-style: none;
-  }
-  .footer_list_customer_care_item {
-    color: white;
-    margin-left: -40px;
-  }
-  .footer_payment {
-    width: 200px;
-    height: 100px;
-    margin-left: 80px;
-  }
-  .footer_list_payment-transport {
-    color: white;
-    margin-left: 80px;
-  }
-  .footer_transport {
-    margin-left: 80px;
-    width: 200px;
-    height: 50px;
-  }
-}
-
 /*  */
 @media only screen and (max-width: 375px) {
   .payment {

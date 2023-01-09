@@ -16,10 +16,10 @@ const Home = () => {
       </Row>
 
       <Row>
-        <Col md={3} sm={24} xs={24} style={{ marginBottom: 8 }}>
+        <Col md={4} sm={24} xs={24} style={{ marginBottom: 8 }}>
           <Navbar />
         </Col>
-        <Col md={21} sm={24}>
+        <Col md={20} sm={24}>
           <CarouselMain />
         </Col>
       </Row>

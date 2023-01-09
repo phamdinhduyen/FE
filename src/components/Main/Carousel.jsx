@@ -13,7 +13,7 @@ const CarouselMain = () => {
   const carousel = carouselData.data;
 
   const contentStyle = {
-    height: "315px",
+    height: "255px",
     color: "#fff",
     lineHeight: "460px",
     textAlign: "center",
