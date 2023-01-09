@@ -161,26 +161,24 @@ const Payment = () => {
       if (bonus?.start_date && bonus?.end_date) {
         if (totalPriceProducts >= bonus.total_amount_apply) {
           console.log(currentDate);
-          console.log(bonus.end_date);
           console.log(bonus.start_date);
-          if (currentDate >= bonus.start_date && currentDate < bonus.end_date) {
-            console.log("1111");
-            const is_percent = bonus.is_percent;
-            if (is_percent) {
-              const remainAmount =
-                totalOrder - (totalOrder * bonus.value) / 100;
-              const bonusPrice = (totalOrder * bonus.value) / 100;
-              console.log("1111");
-              setTotalOrder(remainAmount);
-              setCouponValue(bonusPrice);
-              setBonusValue(true);
-            } else {
-              const remainAmount = totalOrder - bonus.value;
-              setCouponValue(bonus.value);
-              setTotalOrder(remainAmount);
-              setBonusValue(true);
-            }
+          // if (currentDate >= bonus.start_date && currentDate < bonus.end_date) {
+          const is_percent = bonus.is_percent;
+          console.log("1111");
+          if (is_percent) {
+            const remainAmount = totalOrder - (totalOrder * bonus.value) / 100;
+            const bonusPrice = (totalOrder * bonus.value) / 100;
+
+            setTotalOrder(remainAmount);
+            setCouponValue(bonusPrice);
+            setBonusValue(true);
+          } else {
+            const remainAmount = totalOrder - bonus.value;
+            setCouponValue(bonus.value);
+            setTotalOrder(remainAmount);
+            setBonusValue(true);
           }
+          // }
         }
       }
     }
@@ -543,7 +541,7 @@ const Payment = () => {
                     </span>
                   </span>{" "}
                   <br />
-                  <span style={{ marginLeft: 5 }}>
+                  <span style={{ marginLeft: 1 }}>
                     {" "}
                     chỉ được áp dụng cho đơn hàng lớn hơn
                     <span style={{ marginLeft: 2 }}>
